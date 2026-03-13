@@ -21,7 +21,7 @@ Modern ecommerce template built with:
 ## Installation
 
 ```bash
-git clone https://github.com/yourname/react-template
+git clone https://github.com/wsng2005/react-template
 cd react-template
 npm install
 npm run dev
@@ -31,7 +31,7 @@ npm run dev
 npm run build
 
 ## Live Demo
-https://react-template.vercel.app
+https://react-template-nine-tawny.vercel.app/
 
 ## Test Card Number
 United Kingdom (GB)	4000058260000005	Visa (debit)
