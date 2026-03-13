@@ -6,7 +6,6 @@ import Shop from "@/pages/Shop";
 import Cart from "@/pages/Cart";
 import Checkout from "@/pages/Checkout";
 import Contact from "@/pages/Contact";
-import Private from "@/pages/Private";
 import MainLayout from "@/components/layout/MainLayout";
 import Payment from "@/pages/Payment";
 import OrderSuccess from "@/pages/OrderSuccess";
@@ -23,7 +22,6 @@ function AppRoutes() {
           <Route path="/cart" element={<Cart />} />
           <Route path="/checkout" element={<Checkout />} />
           <Route path="/Contact" element={<Contact />} />
-          <Route path="/Private" element={<Private />} />
           <Route path="/Payment" element={<Payment />} />
           <Route path="/OrderSuccess" element={<OrderSuccess />} />
         </Routes>

@@ -16,10 +16,12 @@ export default function OrderSuccess() {
 
   const { customer, products } = order;
 
-  const total = products.reduce(
-    (sum: number, p: any) => sum + p.price * p.quantity,
-    0
-  );
+  const subtotal = products.reduce((sum: number, p: any) => sum + Number(p.price) * Number(p.quantity), 0);
+
+  const booleanVAT = true; 
+  const shipping = subtotal > 50 ? 0 : 4.99;
+  const total = subtotal + shipping;
+  const vat = (total) * 0.2;
 
   return (
     <div className="max-w-5xl mx-auto p-6 space-y-8">
@@ -53,7 +55,7 @@ export default function OrderSuccess() {
       <div className="bg-white shadow rounded-xl p-6">
         <h2 className="text-xl font-semibold mb-4">Products</h2>
 
-        <div className="relative w-100 space-y-4">
+        <div className="relative w-full space-y-4">
 
             {products.map((item: any, index: number) => (
                 <div
@@ -96,10 +98,28 @@ export default function OrderSuccess() {
             ))}
 
         </div>
+        <div className="border-t w-full mt-6 pt-4 space-y-2">
+          <div className="flex justify-between">
+              <span>Subtotal</span>
+              <span>£{subtotal.toFixed(2)}</span>
+          </div>
 
-        <div className="flex justify-between mt-6 text-lg font-semibold">
-          <span>Total</span>
-          <span>£{total}</span>
+          <div className="flex justify-between">
+              <span>Shipping</span>
+              <span>{shipping === 0 ? "Free" : `£${shipping.toFixed(2)}`}</span>
+          </div>
+
+          <div className="flex justify-between text-lg font-semibold">
+              <span>Total</span>
+              <span>£{total.toFixed(2)}</span>
+          </div>
+
+          {booleanVAT && (
+          <div className="flex justify-between">
+              <span>VAT (included)</span>
+              <span>£{vat.toFixed(2)}</span>
+          </div>
+          )}
         </div>
       </div>
       <div className="text-center">

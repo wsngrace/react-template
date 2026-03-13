@@ -24,83 +24,51 @@ export default function Cart() {
 
       {/* Items */}
       <div className="lg:col-span-2 space-y-4">
-        {cart.map(item => (
+        {cart.map((item) => (
           <div
             key={item.cartItemId}
-            className="flex justify-between items-start border-b pb-3 rounded-xl shadow"
+            className="flex items-center justify-between border rounded-lg p-4 shadow-md hover:shadow-md transition"
           >
-            <div className="flex gap-3">
+            
+            {/* Left side */}
+            <div className="flex items-center gap-4 ">
 
-                <img
+              <img
                 src={item.image}
-                className="w-14 h-14 rounded object-cover"
-                />
+                className="w-16 h-16 rounded object-cover"
+              />
 
-                <div>
-                <p className="font-medium">{item.title}</p>
+              <div>
+                <h3 className="font-semibold">{item.title}</h3>
+
+                {item.options &&
+                  Object.entries(item.options).map(([name, value]) => (
+                    <p key={name} className="text-sm text-gray-500">
+                      {name}: {value}
+                    </p>
+                  ))}
+
                 <p className="text-sm text-gray-500">
-                    Qty: {item.quantity}
+                  Qty: {item.quantity}
                 </p>
-                </div>
-
-            </div>
-            <div className="text-left"><img src={item.image} className="w-14 h-14 rounded object-cover" /></div>
-            <div className="width-100">              
-              <h3 className="font-semibold">{item.title}</h3>
-              {item.options && Object.entries(item.options).map(([name, value]) => (
-                <div key={name}>
-                  <span className="text-sm text-gray-600">
-                    {name}: {value}
-                  </span>
-                </div>
-              ))}
-              
-              {/* Quantity selector */}
-              <div className="flex items-center gap-2 mt-2">
-
-                <button
-                  onClick={() => {
-                    if (item.cartItemId && item.quantity === item.min) return;
-                    updateQuantity(item.cartItemId, Number(item.quantity) - 1)
-                  }}
-                  className={`px-2 py-1 bg-gray-200 rounded hover:bg-gray-200 transition
-                    ${item.quantity === item.min
-                      ? "cursor-not-allowed text-gray-400"
-                      : ""}
-                  `}
-                >
-                  −
-                </button>
-
-                <span className="px-2">{Number(item.quantity)}</span>
-
-                <button
-                  onClick={() => {
-                    if (item.cartItemId && item.quantity === item.max) return;
-                    updateQuantity(item.cartItemId, Number(item.quantity) + 1);
-                  }}
-                  className={`px-2 py-1 bg-gray-200 rounded hover:bg-gray-200 transition
-                    ${item.quantity === item.max
-                      ? "cursor-not-allowed text-gray-400"
-                      : ""}
-                  `}
-                >
-                  +
-                </button>
-
               </div>
+
             </div>
 
+            {/* Right side */}
             <div className="text-right">
-              <p className="font-bold">£{Number(item.price) * Number(item.quantity || 1)}</p>
+              <p className="font-bold">
+                £{(item.price * item.quantity).toFixed(2)}
+              </p>
 
               <button
                 onClick={() => removeFromCart(item.cartItemId)}
-                className="text-red-500 text-sm"
+                className="text-red-500 text-sm hover:underline"
               >
                 Remove
               </button>
             </div>
+
           </div>
         ))}
       </div>
