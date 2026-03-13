@@ -3,7 +3,7 @@ import { stripePromise } from "@/lib/stripe";
 import PaymentForm from "@/components/checkout/PaymentForm";
 import { useNavigate } from "react-router-dom";
 
-export default function Payment() {
+export default function payment() {
 
     const navigate = useNavigate();
 

@@ -24,7 +24,7 @@ function AppRoutes() {
           <Route path="/checkout" element={<Checkout />} />
           <Route path="/Contact" element={<Contact />} />
           <Route path="/Private" element={<Private />} />
-          <Route path="/payment" element={<Payment />} />
+          <Route path="/Payment" element={<Payment />} />
           <Route path="/OrderSuccess" element={<OrderSuccess />} />
         </Routes>
       </MainLayout>
