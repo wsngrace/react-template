@@ -1,27 +1,29 @@
 # React E-commerce Template
 
-A modern React e-commerce template built with:
+Modern ecommerce template built with:
+
 - React
+- TypeScript
 - Vite
 - TailwindCSS
-- Context API Cart
+- Stripe payment integration
 
 ## Features
+
 - Product listing
-- Product detail page
-- Shopping cart
+- Cart system with localStorage
 - Checkout page
+- Stripe payment example
 - Order success page
-- Product filters
+- UK address format
+- Responsive design
 
 ## Installation
 
-git clone https://github.com/wsng2005/react-template.git
-
+```bash
+git clone https://github.com/yourname/react-template
 cd react-template
-
 npm install
-
 npm run dev
 
 ## Build
@@ -29,7 +31,7 @@ npm run dev
 npm run build
 
 ## Live Demo
-https://github.com/wsng2005/react-template
+https://react-template.vercel.app
 
 ## Test Card Number
 United Kingdom (GB)	4000058260000005	Visa (debit)

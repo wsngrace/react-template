@@ -12,11 +12,11 @@ export default function QuantitySelector({
   onChange,
 }: Props) {
   const decrease = () => {
-    if (value > (min ?? 1)) onChange(value - 1);
+    if (value > min) onChange(value - 1);
   };
 
   const increase = () => {
-    if (value > (max ?? 99)) onChange(value + 1);
+    if (value < max) onChange(value + 1);
   };
 
   return (
