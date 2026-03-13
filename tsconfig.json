@@ -2,9 +2,9 @@
   "compilerOptions": {
     "target": "ESNext",
     "module": "ESNext",
-    "baseUrl": "*",
+    "baseUrl": ".",
     "paths": {
-      "@/*": ["src/"]
+      "@/*": ["src/*"]
     },
     "jsx": "react-jsx"
   },
