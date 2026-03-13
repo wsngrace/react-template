@@ -1,3 +1,40 @@
+# React E-commerce Template
+
+A modern React e-commerce template built with:
+- React
+- Vite
+- TailwindCSS
+- Context API Cart
+
+## Features
+- Product listing
+- Product detail page
+- Shopping cart
+- Checkout page
+- Order success page
+- Product filters
+
+## Installation
+
+git clone https://github.com/wsng2005/react-template.git
+
+cd react-template
+
+npm install
+
+npm run dev
+
+## Build
+
+npm run build
+
+## Live Demo
+https://github.com/wsng2005/react-template
+
+## Test Card Number
+United Kingdom (GB)	4000058260000005	Visa (debit)
+United Kingdom (GB)	5555558265554449	Mastercard
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
