@@ -31,7 +31,7 @@ npm run dev
 npm run build
 
 ## Live Demo
-https://react-template-nine-tawny.vercel.app/
+https://react-template-k8xndtvyo-wsngraces-projects.vercel.app/
 
 ## Test Card Number
 United Kingdom (GB)	4000058260000005	Visa (debit)
