@@ -8,6 +8,9 @@ export type Product = {
   title: string;
   price: number;
   image: string;
+  min?: number;
+  max?: number;
+  category: string;
   options?: ProductOption[];
 }
 

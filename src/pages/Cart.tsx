@@ -7,12 +7,7 @@ export default function Cart() {
   */
  
    
-  const { cart, removeFromCart, updateQuantity } = useCart();
-
-  const totalItems = cart.reduce(
-    (sum, item) => sum + Number(item.quantity),
-    0
-  );
+  const { cart, removeFromCart } = useCart();
 
   const total = cart.reduce(
     (sum, item) => sum + Number(item.price) * Number(item.quantity || 1),

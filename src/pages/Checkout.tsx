@@ -1,10 +1,8 @@
 import { useState } from "react";
 import toast from "react-hot-toast";
-import { useCart } from "@/context/CartContext";
 import OrderSummary from "@/components/checkout/OrderSummary";
 import { Elements } from "@stripe/react-stripe-js";
 import { stripePromise } from "@/lib/stripe";
-import PaymentForm from "@/components/checkout/PaymentForm";
 import { useNavigate } from "react-router-dom";
 
 
@@ -14,11 +12,11 @@ export default function Checkout() {
 
     const navigate = useNavigate();
 
-    const [popup, setPopup] = useState({
+    /*const [popup, setPopup] = useState({
         show: false,
         message: "",
         type: "error"
-    });
+    });*/
     
     const [form, setForm] = useState({
         email: "",

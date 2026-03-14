@@ -36,6 +36,8 @@ https://react-template-nine-tawny.vercel.app/
 ## Test Card Number
 United Kingdom (GB)	4000058260000005	Visa (debit)
 United Kingdom (GB)	5555558265554449	Mastercard
+Any future date
+Any CVC
 
 # React + TypeScript + Vite
 

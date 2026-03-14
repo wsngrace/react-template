@@ -132,7 +132,7 @@ export default function ProductCard({ product }: Props) {
 
             {/* Quantity */}
             <QuantitySelector
-            value={quantity} min={(product.min) ? product.min : 1} max={(product.max) ? product.max : 99}
+            value={quantity} min={(product.min ?? 1)} max={(product.max ?? 99)}
             onChange={setQuantity}
             />
 
