@@ -34,7 +34,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
       
       const normalized = parsed.map((item: any) => ({
         cartItemId: Object.values(item.options || {}).length === 0 ? item.id : item.id + "-" + Object.values(item.options || {}).join("-"),
-        id: item.id,
+        id: String(item.id),
         title: item.title,
         price: Number(item.price) || 0,
         image: item.image || "",

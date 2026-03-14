@@ -4,7 +4,7 @@ export type ProductOption = {
 }
 
 export type Product = {
-  id: number;
+  id: string;
   title: string;
   price: number;
   image: string;
@@ -16,7 +16,7 @@ export type Product = {
 
 export const products: Product[] = [
   {
-    id: 1,
+    id: "1",
     title: "Minimal Sneakers",
     price: 79,
     image: "https://picsum.photos/400/400?1",
@@ -33,7 +33,7 @@ export const products: Product[] = [
     ]
   },
   {
-    id: 2,
+    id: "2",
     title: "Classic Jacket",
     price: 120,
     category: "clothing",
@@ -43,7 +43,7 @@ export const products: Product[] = [
     ]
   },
   {
-    id: 3,
+    id: "3",
     title: "Long Jacket",
     price: 120,
     category: "shclothingirt",
@@ -53,7 +53,7 @@ export const products: Product[] = [
     ]
   },
   {
-    id: 4,
+    id: "4",
     title: "Urban Backpack",
     price: 59,
     category: "bags",
@@ -63,14 +63,14 @@ export const products: Product[] = [
     ]
   },
   {
-    id: 5,
+    id: "5",
     title: "Modern T-shirt",
     price: 199,
     category: "clothing",
     image: "https://picsum.photos/400/400?5",
   },
   {
-    id: 6,
+    id: "6",
     title: "Classic Sneakers",
     price: 79,
     image: "https://picsum.photos/400/400?6",
@@ -87,7 +87,7 @@ export const products: Product[] = [
     ]
   },
   {
-    id: 7,
+    id: "7",
     title: "Smart Watch",
     price: 299,
     image: "https://picsum.photos/400/400?7",

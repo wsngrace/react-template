@@ -26,11 +26,11 @@ export default function ProductCard({ product }: Props) {
     const handleAddToCart = (product: Product, quantity: number, selectedOptions: { [key: string]: string }) => {
         if (!allSelected) return;
 
-        const cartItemId = Object.values(selectedOptions || {}).length === 0 ? product.id : product.id + "-" + Object.values(selectedOptions || {}).join("-");
+        const cartItemId = Object.values(selectedOptions || {}).length === 0 ? String(product.id) : String(product.id) + "-" + Object.values(selectedOptions || {}).join("-");
         
         addToCart({
             cartItemId: cartItemId,
-            id: product.id,
+            id: String(product.id),
             title: product.title,
             price: product.price,
             image: product.image,
@@ -96,37 +96,6 @@ export default function ProductCard({ product }: Props) {
                 selected={selectedOptions}
                 onChange={setSelectedOptions}
                 />
-
-                {/*<div className="mt-3">}
-                {product.options?.map(option => (
-                    <div key={option.name} className="mt-3">
-                    <label className="block text-sm font-medium text-gray-700">
-                        {option.name}
-                    </label>
-
-
-                    <div className="flex gap-2 mt-1 flex-wrap">
-                        {option.values.map(value => (
-                        <button
-                            key={value}
-                            type="button"
-                            className={`px-3 py-1 border rounded-md text-sm transition
-                            ${
-                            selectedOptions[option.name] === value
-                                ? "bg-indigo-600 text-white"
-                                : "bg-gray-100 text-gray-700"
-                            }`}
-                            onClick={() =>
-                            handleOptionChange(option.name, value)
-                            }
-                        >
-                            {value}
-                        </button>
-                        ))}
-                    </div>
-                    </div>
-                ))}
-                </div>*/}
 
             </div>
 
