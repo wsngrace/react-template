@@ -1,7 +1,12 @@
+type ProductOption = {
+  name: string;
+  values: string[];
+};
+
 type Props = {
-  options: any[];
-  selected: any;
-  onChange: any;
+  options: ProductOption[];
+  selected: Record<string, string>;
+  onChange: (value: Record<string, string>) => void;
 };
 
 export default function VariantSelector({ options, selected, onChange }: Props) {

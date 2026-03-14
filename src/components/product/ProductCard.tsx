@@ -23,7 +23,7 @@ export default function ProductCard({ product }: Props) {
     
     
 
-    const handleAddToCart  = (product, quantity, selectedOptions) => {
+    const handleAddToCart = (product: Product, quantity: number, selectedOptions: { [key: string]: string }) => {
         if (!allSelected) return;
 
         const cartItemId = Object.values(selectedOptions || {}).length === 0 ? product.id : product.id + "-" + Object.values(selectedOptions || {}).join("-");
@@ -40,13 +40,13 @@ export default function ProductCard({ product }: Props) {
             options: selectedOptions
         });
 
-        console.log("Add to cart:", product, quantity, selectedOptions);
+        /*console.log("Add to cart:", product, quantity, selectedOptions);
 
         const cart = JSON.parse(localStorage.getItem("cart") || "[]");
 
         cart.push(product);
 
-        localStorage.setItem("cart", JSON.stringify(cart));
+        localStorage.setItem("cart", JSON.stringify(cart));*/
 
         setAdded(true);
 
@@ -92,7 +92,7 @@ export default function ProductCard({ product }: Props) {
                 
                 {/* Options */}
                 <VariantSelector
-                options={product.options}
+                options={product.options ?? []}
                 selected={selectedOptions}
                 onChange={setSelectedOptions}
                 />
@@ -137,7 +137,7 @@ export default function ProductCard({ product }: Props) {
             />
 
             {/* Button always bottom */}
-            <button  onClick={function(){handleAddToCart(product, quantity, selectedOptions); } } className={`
+            <button  onClick={() => handleAddToCart(product, quantity, selectedOptions)} className={`
                 mt-4 w-full
                 bg-gray-900 text-white
                 py-2 rounded-lg

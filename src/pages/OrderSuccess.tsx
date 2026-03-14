@@ -57,45 +57,43 @@ export default function OrderSuccess() {
 
         <div className="relative w-full space-y-4">
 
-            {products.map((item: any, index: number) => (
-                <div
-                key={item.cartItemId}
-                className="flex justify-between items-start pb-3 rounded-xl"
-                >
+          {products.map((item: any) => (
+            <div
+              key={item.cartItemId}
+              className="flex justify-between items-start pb-3 rounded-xl"
+            >
 
-                {/* Left side (image + text) */}
-                <div className="flex gap-3">
+              <div className="flex gap-3">
+                <img
+                  src={item.image}
+                  className="w-14 h-14 rounded object-cover"
+                />
 
-                    <img
-                    src={item.image}
-                    className="w-14 h-14 rounded object-cover"
-                    />
+                <div>
+                  <p className="font-medium">{item.title}</p>
 
-                    <div className="">
-                    <p className="font-medium">{item.title}</p>
-                    <p className="text-sm text-gray-500">
-                        {item.options && Object.entries(item.options).map(([name, value]) => (
-                            <div key={name}>
-                            <span className="text-sm text-gray-600">
-                                {name}: {value}
-                            </span>
-                            </div>
-                        ))}
-                    </p>
-                    <p className="text-sm text-gray-500">
-                        Qty: {item.quantity}
-                    </p>
-                    </div>
+                  <div className="text-sm text-gray-500">
+                    {item.options &&
+                      Object.entries(item.options).map(([name, value]) => (
+                        <div key={name}>
+                          {name}: {String(value)}
+                        </div>
+                    ))}
+                  </div>
 
+                  <p className="text-sm text-gray-500">
+                    Qty: {item.quantity}
+                  </p>
                 </div>
 
-                {/* Right side (price) */}
-                <p className="font-medium">
-                    £{(item.price * item.quantity).toFixed(2)}
-                </p>
+              </div>
 
-                </div>
-            ))}
+              <p className="font-medium">
+                £{(item.price * item.quantity).toFixed(2)}
+              </p>
+
+            </div>
+          ))}
 
         </div>
         <div className="border-t w-full mt-6 pt-4 space-y-2">
