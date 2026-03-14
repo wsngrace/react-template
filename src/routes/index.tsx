@@ -7,7 +7,7 @@ import Cart from "@/pages/Cart";
 import Checkout from "@/pages/Checkout";
 import Contact from "@/pages/Contact";
 import MainLayout from "@/components/layout/MainLayout";
-import Payment from "@/pages/Payment11";
+import Payment from "@/pages/Payment";
 import OrderSuccess from "@/pages/OrderSuccess";
 
 function AppRoutes() {
