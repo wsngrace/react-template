@@ -45,3 +45,87 @@ Clone the repository:
 
 ```bash
 git clone https://github.com/wsng2005/react-template.git
+cd react-template
+
+Install dependencies:
+npm install
+
+Start development server:
+npm run dev
+
+Open in browser:
+http://localhost:5173
+
+🏗 Build Project
+
+To create a production build:
+
+npm run build
+
+Preview production build:
+
+npm run preview
+💳 Stripe Test Card Numbers
+
+Use Stripe test cards when testing payments.
+
+Country	Card Number	Brand
+United Kingdom	4000058260000005	Visa (Debit)
+United Kingdom	5555558265554449	Mastercard
+
+Other details:
+
+Expiry Date: Any future date
+CVC: Any 3 digits
+Postcode: Any valid UK postcode
+
+⚠️ This project uses Stripe test mode only.
+
+📁 Project Structure
+src
+ ├── components
+ │   ├── cart
+ │   ├── checkout
+ │   ├── layout
+ │   └── product
+ │
+ ├── context
+ │   └── CartContext.tsx
+ │
+ ├── data
+ │   └── products.ts
+ │
+ ├── pages
+ │   ├── Cart.tsx
+ │   ├── Checkout.tsx
+ │   ├── Payment.tsx
+ │   ├── OrderSuccess.tsx
+ │   └── Shop.tsx
+ │
+ ├── routes
+ │   └── index.tsx
+ │
+ └── main.tsx
+🧪 Template Purpose
+
+This project is intended as a starter template for:
+
+E-commerce frontend development
+
+Learning React + TypeScript
+
+Stripe payment integration practice
+
+Building modern React UI with TailwindCSS
+
+You can extend it with:
+
+backend API
+
+product database
+
+authentication
+
+real Stripe checkout
+
+admin dashboard
