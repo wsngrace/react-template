@@ -81,11 +81,11 @@ Expiry Date: Any future date<br>
 CVC: Any 3 digits<br>
 Postcode: Any valid UK postcode
 
-#⚠️ This project uses Stripe test mode only.
+# ⚠️ This project uses Stripe test mode only.
 
 ---
 
-##🧪 Template Purpose
+## 🧪 Template Purpose
 
 This project is intended as a starter template for:
 
