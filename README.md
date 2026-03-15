@@ -80,7 +80,7 @@ Expiry Date: Any future date
 CVC: Any 3 digits
 Postcode: Any valid UK postcode
 
-⚠️ This project uses Stripe test mode only.
+#⚠️ This project uses Stripe test mode only.
 
 ---
 
