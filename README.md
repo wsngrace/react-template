@@ -26,8 +26,11 @@ cd react-template
 npm install
 npm run dev
 
+## Build
+npm run build
+
 ## Live Demo
-[Live Demo Link](https://react-template-k8xndtvyo-wsngraces-projects.vercel.app)
+https://react-template-k8xndtvyo-wsngraces-projects.vercel.app/
 
 ## Test Card Number
 United Kingdom (GB)	4000058260000005	Visa (debit)
