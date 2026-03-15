@@ -8,7 +8,7 @@ Designed for developers who want a **clean and extendable online store frontend*
 
 ## 🚀 Live Demo
 
-👉 https://react-template-k8xndtvyo-wsngraces-projects.vercel.app/
+👉 [https://react-template-k8xndtvyo-wsngraces-projects.vercel.app/](https://react-template-k8xndtvyo-wsngraces-projects.vercel.app/)
 
 ---
 
@@ -76,32 +76,7 @@ Postcode: Any valid UK postcode
 
 ⚠️ This project uses Stripe test mode only.
 ---
-📁 Project Structure
-src
- ├── components
- │   ├── cart
- │   ├── checkout
- │   ├── layout
- │   └── product
- │
- ├── context
- │   └── CartContext.tsx
- │
- ├── data
- │   └── products.ts
- │
- ├── pages
- │   ├── Cart.tsx
- │   ├── Checkout.tsx
- │   ├── Payment.tsx
- │   ├── OrderSuccess.tsx
- │   └── Shop.tsx
- │
- ├── routes
- │   └── index.tsx
- │
- └── main.tsx
- ---
+
 🧪 Template Purpose
 
 This project is intended as a starter template for:
