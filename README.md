@@ -77,8 +77,8 @@ Country	Card Number	Brand
 | United Kingdom | 5555558265554449 | Mastercard |
 | ---      | ---       | ---       |
 
-Expiry Date: Any future date
-CVC: Any 3 digits
+Expiry Date: Any future date<br>
+CVC: Any 3 digits<br>
 Postcode: Any valid UK postcode
 
 #⚠️ This project uses Stripe test mode only.
