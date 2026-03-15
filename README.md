@@ -71,6 +71,7 @@ npm run preview
 Use Stripe test cards when testing payments.
 
 Country	Card Number	Brand
+| Country  | Card Number | Brand |
 | ---      | ---       | ---       |
 | United Kingdom | 4000058260000005 | Visa (Debit) |
 | United Kingdom | 5555558265554449 | Mastercard |
