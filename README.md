@@ -53,31 +53,38 @@ npm install
 Start development server:
 npm run dev
 ```
+
 ---
-Open in browser:
+
+## Open in browser:
 http://localhost:5173
+
 ---
-Preview production build:
+
+## Preview production build:
 npm run preview
+
 ---
+
 💳 Stripe Test Card Numbers
 
 Use Stripe test cards when testing payments.
 
 Country	Card Number	Brand
-United Kingdom	4000058260000005	Visa (Debit)
-United Kingdom	5555558265554449	Mastercard
-
-Other details:
+| ------------- | ------------- |
+| United Kingdom  | 4000058260000005 |	Visa (Debit)	|
+| United Kingdom  | 5555558265554449 |	Mastercard	| 
+| ------------- | ------------- |
 
 Expiry Date: Any future date
 CVC: Any 3 digits
 Postcode: Any valid UK postcode
 
 ⚠️ This project uses Stripe test mode only.
+
 ---
 
-🧪 Template Purpose
+##🧪 Template Purpose
 
 This project is intended as a starter template for:
 
