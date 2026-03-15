@@ -52,19 +52,14 @@ npm install
 
 Start development server:
 npm run dev
-
+```
+---
 Open in browser:
 http://localhost:5173
-
-🏗 Build Project
-
-To create a production build:
-
-npm run build
-
+---
 Preview production build:
-
 npm run preview
+---
 💳 Stripe Test Card Numbers
 
 Use Stripe test cards when testing payments.
@@ -80,7 +75,7 @@ CVC: Any 3 digits
 Postcode: Any valid UK postcode
 
 ⚠️ This project uses Stripe test mode only.
-
+---
 📁 Project Structure
 src
  ├── components
@@ -106,6 +101,7 @@ src
  │   └── index.tsx
  │
  └── main.tsx
+ ---
 🧪 Template Purpose
 
 This project is intended as a starter template for:
