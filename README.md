@@ -26,10 +26,6 @@ cd react-template
 npm install
 npm run dev
 
-## Build
-
-npm run build
-
 ## Live Demo
 [Live Demo Link](https://react-template-k8xndtvyo-wsngraces-projects.vercel.app)
 
