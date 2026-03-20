@@ -1,114 +1,110 @@
 # React E-commerce Template
 
-Modern ecommerce template built with:
+A modern **e-commerce starter template** built with **React, TypeScript, Vite, and TailwindCSS**.
+
+Designed for developers who want a **clean and extendable online store frontend** with cart, checkout, and Stripe payment integration.
+
+---
+
+## 🚀 Live Demo
+
+👉 [https://react-template-k8xndtvyo-wsngraces-projects.vercel.app/](https://react-template-k8xndtvyo-wsngraces-projects.vercel.app/)
+
+---
+
+## 🛠 Tech Stack
 
 - React
 - TypeScript
 - Vite
 - TailwindCSS
-- Stripe payment integration
+- Stripe (payment example)
+- React Context API
+- LocalStorage cart persistence
 
-## Features
+---
 
-- Product listing
-- Cart system with localStorage
-- Checkout page
-- Stripe payment example
+## ✨ Features
+
+- Product listing page
+- Product variants (size / color example)
+- Add to cart system
+- Cart quantity selector
+- Cart persistence using localStorage
+- Checkout page (UK address format)
+- Stripe payment integration example
 - Order success page
-- UK address format
-- Responsive design
+- Responsive design (mobile friendly)
+- Modern UI with TailwindCSS
 
-## Installation
+---
+
+## 📦 Installation
+
+Clone the repository:
 
 ```bash
-git clone https://github.com/wsng2005/react-template
+git clone https://github.com/wsng2005/react-template.git
 cd react-template
+
+Install dependencies:
 npm install
+
+Start development server:
 npm run dev
-
-## Build
-
-npm run build
-
-## Live Demo
-https://react-template-nine-tawny.vercel.app/
-
-## Test Card Number
-United Kingdom (GB)	4000058260000005	Visa (debit)
-United Kingdom (GB)	5555558265554449	Mastercard
-Any future date
-Any CVC
-
-# React + TypeScript + Vite
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Open in browser:
+http://localhost:5173
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+---
+
+## Preview production build:
+npm run preview
+
+---
+
+💳 Stripe Test Card Numbers
+
+Use Stripe test cards when testing payments.
+
+Country	Card Number	Brand
+| Country  | Card Number | Brand |
+| ---      | ---       | ---       |
+| United Kingdom | 4000058260000005 | Visa (Debit) |
+| United Kingdom | 5555558265554449 | Mastercard |
+| ---      | ---       | ---       |
+
+Expiry Date: Any future date<br>
+CVC: Any 3 digits<br>
+Postcode: Any valid UK postcode
+
+**⚠️ This project uses Stripe test mode only.**
+
+---
+
+## 🧪 Template Purpose
+
+This project is intended as a starter template for:
+
+E-commerce frontend development
+
+Learning React + TypeScript
+
+Stripe payment integration practice
+
+Building modern React UI with TailwindCSS
+
+You can extend it with:
+
+backend API
+
+product database
+
+authentication
+
+real Stripe checkout
+
+admin dashboard
