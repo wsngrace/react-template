@@ -78,7 +78,7 @@ export default function Cart() {
         </div>
 
         <a
-          href="/checkout"
+          href="/Checkout"
           className="block text-center bg-gray-900 text-white py-3 rounded-lg hover:bg-indigo-600"
         >
           Checkout

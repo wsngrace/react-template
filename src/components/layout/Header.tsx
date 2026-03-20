@@ -28,7 +28,7 @@ function Header() {
         <Link to="/" style={styles.link}>
           Home
         </Link>
-        <Link to="/about" style={styles.link}>
+        <Link to="/About" style={styles.link}>
           About
         </Link>
         <Link to="/Shop" style={styles.link}>
