@@ -8,7 +8,7 @@ Designed for developers who want a **clean and extendable online store frontend*
 
 ## 🚀 Live Demo
 
-👉 [https://react-template-k8xndtvyo-wsngraces-projects.vercel.app/](https://react-template-k8xndtvyo-wsngraces-projects.vercel.app/)
+👉 [https://react-template-nine-tawny.vercel.app/](https://react-template-nine-tawny.vercel.app/)
 
 ---
 
