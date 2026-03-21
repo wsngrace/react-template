@@ -4,7 +4,7 @@ import { products } from "@/data/products";
 
 export default function Home() {
 
-  const featured = products.slice(0, 6);
+  const featured = products.slice(0, 4);
 
   return (
     <div>
@@ -41,7 +41,7 @@ export default function Home() {
           </div>
 
           <img
-            src="/images/hero.jpg"
+            src="https://dummyimage.com/600x4:2/ffc800/"
             className="rounded-xl shadow-lg"
           />
 
@@ -59,10 +59,10 @@ export default function Home() {
         <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-6">
 
           {[
-            { name: "Bags", image: "/images/cat-bag.jpg" },
-            { name: "Shoes", image: "/images/cat-shoes.jpg" },
-            { name: "Shirt", image: "/images/cat-accessories.jpg" },
-            { name: "Clothing", image: "/images/cat-clothing.jpg" }
+            { name: "Bags", image: "https://dummyimage.com/400/ffc800/" },
+            { name: "Shoes", image: "https://dummyimage.com/400/ffc800/" },
+            { name: "Shirt", image: "https://dummyimage.com/400/ffc800/" },
+            { name: "Clothing", image: "https://dummyimage.com/400/ffc800/" }
           ].map(cat => (
 
             <Link

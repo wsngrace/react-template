@@ -22,19 +22,21 @@ function Header() {
 
   return (
     <header style={styles.header}>
-      <div style={styles.logo}>My Shopping Template</div>
+      <div style={styles.logo}>Store Template</div>
 
-      <nav style={styles.nav}>
-        <Link to="/" style={styles.link}>
+      <nav className="flex items-center gap-4 h-16">
+        <Link to="/" className="flex items-center h-full px-2 py-1 text-white hover:bg-indigo-600 rounded">
           Home
         </Link>
-        <Link to="/About" style={styles.link}>
+
+        <Link to="/About" className="flex items-center h-full px-3 py-1 text-white hover:bg-indigo-600 rounded">
           About
         </Link>
-        <Link to="/Shop" style={styles.link}>
+
+        <Link to="/Shop" className="flex items-center h-full px-3 py-1 text-white hover:bg-indigo-600 rounded">
           Shop
         </Link>
-        <Link to="/Cart" style={styles.link}>
+        <Link to="/Cart" className="p-1 text-white transition">
           <button
           
           className={`cursor-pointer relative text-2xl transition ${animateCart ? "cart-bounce text-indigo-600" : "text-white"} `}
@@ -71,17 +73,17 @@ const styles = {
     backgroundColor: "#1e293b",
     color: "white",
   },
+  footer: {
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+    padding: "16px 32px",
+    backgroundColor: "#1e293b",
+    color: "white",
+  },
   logo: {
     fontWeight: "bold",
     fontSize: "20px",
-  },
-  nav: {
-    display: "flex",
-    gap: "20px",
-  },
-  link: {
-    color: "white",
-    textDecoration: "none",
   },
 };
 

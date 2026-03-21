@@ -6,13 +6,25 @@ export default function OrderSuccess() {
 
   useEffect(() => {
     const data = localStorage.getItem("orderSuccess");
+    localStorage.removeItem("orderSuccess");
     localStorage.removeItem("cart");
     localStorage.removeItem("checkout");
 
     if (data) setOrder(JSON.parse(data));
   }, []);
 
-  if (!order) return <p className="p-6">No order found</p>;
+  if (!order) return (
+    <div className="relative text-center">
+      <p className="p-6 text-center">No order found</p>
+      <a href="/" className="inline-flex items-center gap-2 text-sm font-medium text-gray-700 hover:text-indigo-600 transition group" >
+          <i className="fi fi-br-arrow-left transition-transform duration-200 group-hover:-translate-x-1"></i>
+          <span className="border-b border-transparent group-hover:border-indigo-600">
+              Back to homepage
+          </span>
+      </a>
+    </div>
+  )
+  
 
   const { customer, products } = order;
 

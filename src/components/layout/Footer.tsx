@@ -1,44 +1,95 @@
-import { Link } from "react-router-dom";
-
-function Footer() {
+export default function Footer() {
   return (
-    <div style={styles.header}>
-      <div style={styles.logo}></div>
+    <footer className="bg-gray-100 mt-16">
 
-      <nav style={styles.nav}>
-        <Link to="/contact" style={styles.link}>
-          Contact Us
-        </Link>
-        <Link to="/private" style={styles.link}>
-          Private & Confidential
-        </Link>
-      </nav>
-      <div style={styles.nav}>© 2026, Template.com</div>
-    </div>
+      <div className="max-w-7xl mx-auto px-4 py-12 grid gap-10 md:grid-cols-4">
+
+        {/* Brand */}
+        <div>
+          <h2 className="text-xl font-bold mb-4">
+            YourStore
+          </h2>
+
+          <p className="text-gray-600 text-sm">
+            Your trusted online store for quality products and
+            reliable service.
+          </p>
+        </div>
+
+        {/* Shop */}
+        <div>
+          <h3 className="font-semibold mb-4">Shop</h3>
+
+          <ul className="space-y-2 text-sm text-gray-600">
+            <li>
+              <a href="/Shop" className="hover:text-black">
+                All Products
+              </a>
+            </li>
+
+            <li>
+              <a href="/Cart" className="hover:text-black">
+                Cart
+              </a>
+            </li>
+
+            <li>
+              <a href="/Checkout" className="hover:text-black">
+                Checkout
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        {/* Policies */}
+        <div>
+          <h3 className="font-semibold mb-4">Policies</h3>
+
+          <ul className="space-y-2 text-sm text-gray-600">
+            <li>
+              <a href="/ShippingPolicy" className="hover:text-black">
+                Shipping Policy
+              </a>
+            </li>
+
+            <li>
+              <a href="/Return" className="hover:text-black">
+                Returns & Refunds
+              </a>
+            </li>
+
+            <li>
+              <a href="/Private" className="hover:text-black">
+                Private & Confidential
+              </a>
+            </li>
+
+            <li>
+              <a href="/Contact" className="hover:text-black">
+                Contact
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        {/* Contact */}
+        <div>
+          <h3 className="font-semibold mb-4">Contact</h3>
+
+          <ul className="space-y-2 text-sm text-gray-600">
+            <li>Email: support@yourstore.com</li>
+            <li>Phone: +44 1234 567890</li>
+            <li>United Kingdom</li>
+          </ul>
+        </div>
+
+      </div>
+
+      {/* Bottom */}
+      <div className="border-t text-center text-sm text-gray-500 py-4">
+        © {new Date().getFullYear()} YourStore. All rights reserved.
+      </div>
+
+    </footer>
   );
 }
-
-const styles = {
-  header: {
-    display: "flex",
-    justifyContent: "space-between",
-    alignItems: "center",
-    padding: "16px 32px",
-    backgroundColor: "#1e293b",
-    color: "white",
-  },
-  logo: {
-    fontWeight: "bold",
-    fontSize: "20px",
-  },
-  nav: {
-    display: "flex",
-    gap: "20px",
-  },
-  link: {
-    color: "white",
-    textDecoration: "none",
-  },
-};
-
-export default Footer;

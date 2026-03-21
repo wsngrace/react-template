@@ -9,6 +9,8 @@ export default function Cart() {
    
   const { cart, removeFromCart } = useCart();
 
+  const isCartEmpty = cart.length === 0;
+
   const total = cart.reduce(
     (sum, item) => sum + Number(item.price) * Number(item.quantity || 1),
     0
@@ -19,7 +21,12 @@ export default function Cart() {
 
       {/* Items */}
       <div className="lg:col-span-2 space-y-4">
-        {cart.map((item) => (
+        {isCartEmpty && (
+          <h3 className="font-semibold text-sm text-red-500 mt-2">
+            Your cart is empty
+          </h3>
+        )}
+        {!isCartEmpty && cart.map((item) => (
           <div
             key={item.cartItemId}
             className="flex items-center justify-between border rounded-lg p-4 shadow-md hover:shadow-md transition"
@@ -27,8 +34,9 @@ export default function Cart() {
             
             {/* Left side */}
             <div className="flex items-center gap-4 ">
-
-              <img
+              
+              {!isCartEmpty && (
+                <><img
                 src={item.image}
                 className="w-16 h-16 rounded object-cover"
               />
@@ -46,8 +54,9 @@ export default function Cart() {
                 <p className="text-sm text-gray-500">
                   Qty: {item.quantity}
                 </p>
-              </div>
-
+              </div></>
+              
+            )}
             </div>
 
             {/* Right side */}
@@ -77,10 +86,7 @@ export default function Cart() {
           <span className="font-bold">£{total}</span>
         </div>
 
-        <a
-          href="/Checkout"
-          className="block text-center bg-gray-900 text-white py-3 rounded-lg hover:bg-indigo-600"
-        >
+        <a href={!isCartEmpty ? "/Checkout" : "#"} className={`block text-center py-3 rounded-lg ${ isCartEmpty ? "bg-gray-300 text-gray-500 cursor-not-allowed pointer-events-none" : "bg-gray-900 text-white hover:bg-indigo-600" }`} >
           Checkout
         </a>
       </div>

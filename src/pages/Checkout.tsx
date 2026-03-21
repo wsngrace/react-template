@@ -4,13 +4,17 @@ import OrderSummary from "@/components/checkout/OrderSummary";
 import { Elements } from "@stripe/react-stripe-js";
 import { stripePromise } from "@/lib/stripe";
 import { useNavigate } from "react-router-dom";
-
+import { useCart } from "@/context/CartContext";
 
 
 
 export default function Checkout() {
 
     const navigate = useNavigate();
+
+    const { cart } = useCart();
+
+    const isCartEmpty = cart.length === 0;
 
     /*const [popup, setPopup] = useState({
         show: false,
@@ -99,70 +103,88 @@ export default function Checkout() {
 
         toast.success("Checkout successful");
 
-        navigate("/payment");
+        navigate("/Payment");
     }
 
     return (
         <Elements stripe={stripePromise}>
-            
-            <div className="max-w-7xl mx-auto p-6 grid lg:grid-cols-3 gap-10">
-                
-                {/* LEFT SIDE */}
-                <div className="lg:col-span-2 space-y-8">
-                    <form onSubmit={handleSubmit} className="space-y-4">
-                        {/* Contact */}
-                        <section className="bg-white p-6 rounded-xl shadow">
-                            <div className="border-b-4 border-indigo-500 text-lg text-center font-semibold mb-4"><h1>Guest Checkout</h1></div>
-                            <h2 className="text-lg font-semibold mb-4">Guest Email</h2>
 
-                            <input name="email" value={form.email} onChange={handleChange} placeholder="Email address" className={`w-full border rounded-lg p-3 ${errors.email ? "border-red-500" :"" }`} />
+            {isCartEmpty && (
+                <div className="max-w-7xl mx-auto p-6 lg:grid-cols-3 gap-10">
+                    <div className="relative">
+                        <h3 className="font-semibold text-sm text-red-500 mt-2">
+                            Your cart is empty
+                        </h3>
+                    </div>  
+                    <div className="relative text-center">
+                        <a href="/" className="inline-flex items-center gap-2 text-sm font-medium text-gray-700 hover:text-indigo-600 transition group" >
+                            <i className="fi fi-br-arrow-left transition-transform duration-200 group-hover:-translate-x-1"></i>
+                            <span className="border-b border-transparent group-hover:border-indigo-600">
+                                Back to homepage
+                            </span>
+                        </a>
+                    </div>
+                </div>                
+            )}
+            {/* LEFT SIDE */}
+            {!isCartEmpty && (
+                <div className="max-w-7xl mx-auto p-6 grid lg:grid-cols-3 gap-10">
+                    <div className="lg:col-span-2 space-y-8">
+                        <form onSubmit={handleSubmit} className="space-y-4">
+                            {/* Contact */}
+                            <section className="bg-white p-6 rounded-xl shadow">
+                                <div className="border-b-4 border-indigo-500 text-lg text-center font-semibold mb-4"><h1>Guest Checkout</h1></div>
+                                <h2 className="text-lg font-semibold mb-4">Guest Email</h2>
 
-                        </section>
+                                <input name="email" value={form.email} onChange={handleChange} placeholder="Email address" className={`w-full border rounded-lg p-3 ${errors.email ? "border-red-500" :"" }`} />
 
-                        {/* Shipping Address */}
-                        <section className="bg-white p-6 rounded-xl shadow">
-                            <h2 className="text-lg font-semibold mb-4">Shipping Address</h2>
+                            </section>
 
-                            <div className="grid grid-cols-2 gap-4">
+                            {/* Shipping Address */}
+                            <section className="bg-white p-6 rounded-xl shadow">
+                                <h2 className="text-lg font-semibold mb-4">Shipping Address</h2>
 
-                                <input name="firstName" placeholder="First Name" onChange={handleChange} className={`border rounded-lg p-3 w-full ${errors.firstName ? "border-red-500" :"" }`} />
-                                
-                                <input name="lastName" placeholder="Last Name" onChange={handleChange} className={`border rounded-lg p-3 w-full ${errors.lastName ? "border-red-500" :"" }`} />
+                                <div className="grid grid-cols-2 gap-4">
 
-                                <input name="address1" placeholder="Address Line 1" onChange={handleChange} className={`border rounded-lg p-3 col-span-2 w-full ${errors.address1 ? "border-red-500" :"" }`}/>
+                                    <input name="firstName" placeholder="First Name" onChange={handleChange} className={`border rounded-lg p-3 w-full ${errors.firstName ? "border-red-500" :"" }`} />
+                                    
+                                    <input name="lastName" placeholder="Last Name" onChange={handleChange} className={`border rounded-lg p-3 w-full ${errors.lastName ? "border-red-500" :"" }`} />
 
-                                <input name="address2" placeholder="Address Line 2 (Optional)" className="border rounded-lg p-3 col-span-2 w-full" />
-                                
-                                <input name="city" placeholder="Town / City" onChange={handleChange} className={`border rounded-lg p-3 w-full ${errors.city ? "border-red-500" :"" }`} />
+                                    <input name="address1" placeholder="Address Line 1" onChange={handleChange} className={`border rounded-lg p-3 col-span-2 w-full ${errors.address1 ? "border-red-500" :"" }`}/>
 
-                                <input name="country" placeholder="Country (Optional)" className="border rounded-lg p-3 w-full" />
+                                    <input name="address2" placeholder="Address Line 2 (Optional)" className="border rounded-lg p-3 col-span-2 w-full" />
+                                    
+                                    <input name="city" placeholder="Town / City" onChange={handleChange} className={`border rounded-lg p-3 w-full ${errors.city ? "border-red-500" :"" }`} />
 
-                                <input name="postcode" placeholder="Postcode (e.g. SW1A 1AA)" onChange={handleChange} className={`border rounded-lg p-3 w-full ${errors.postcode ? "border-red-500" :"" }`} />
+                                    <input name="country" placeholder="Country (Optional)" className="border rounded-lg p-3 w-full" />
 
-                                <select className="border rounded-lg p-3 w-full">
-                                    <option>United Kingdom</option>
-                                </select>
+                                    <input name="postcode" placeholder="Postcode (e.g. SW1A 1AA)" onChange={handleChange} className={`border rounded-lg p-3 w-full ${errors.postcode ? "border-red-500" :"" }`} />
 
-                                <input name="phone" placeholder="Phone (+44)" onChange={handleChange} className={`border rounded-lg p-3 col-span-2 w-full ${errors.phone ? "border-red-500" :"" }`}/>
+                                    <select className="border rounded-lg p-3 w-full">
+                                        <option>United Kingdom</option>
+                                    </select>
 
-                                <button type="submit" className="bg-black text-white p-3 w-full rounded" >
-                                    Place Order
-                                </button>
+                                    <input name="phone" placeholder="Phone (+44)" onChange={handleChange} className={`border rounded-lg p-3 col-span-2 w-full ${errors.phone ? "border-red-500" :"" }`}/>
 
-                            </div>
-                        </section>
-                    </form>
+                                    <button type="submit" className="bg-black text-white p-3 w-full rounded cursor-pointer hover:bg-indigo-600 transition" >
+                                        Place Order
+                                    </button>
+
+                                </div>
+                            </section>
+                        </form>
+                        
+                    </div>
+                    {/* RIGHT SIDE - ORDER SUMMARY */}
                     
+                    <div className="bg-white p-6 rounded-xl shadow h-fit">
+
+                        <OrderSummary />
+
+                    </div>
                 </div>
-
-                {/* RIGHT SIDE - ORDER SUMMARY */}
-                <div className="bg-white p-6 rounded-xl shadow h-fit">
-
-                    <OrderSummary />
-
-                </div>
-
-            </div>
+            )}
+            
         </Elements>
         
     );
